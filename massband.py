@@ -14,6 +14,7 @@ datum_ende = datetime(2023, 12, 15)
 
 tag_delta_1 = datum_ende - datum_start
 tag_delta_2 = tag_delta_1 - (datum_ende - datum_heute)
+tag_delta_3 = datum_ende - datum_heute
 
 col1, col2 = st.columns(2)
 
@@ -28,7 +29,7 @@ with col21:
 
 with col22:
     st.metric("Tage verbleibend", 
-          tag_delta_2.days,
+          tag_delta_3.days,
     )
 
 with col23:
