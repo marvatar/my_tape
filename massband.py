@@ -13,7 +13,7 @@ datum_heute = datetime.today()
 datum_ende = datetime(2023, 12, 15)
 
 tag_delta_1 = datum_ende - datum_start
-tag_delta_2 = tag_delta_1 - (datum_ende - datum_heute)
+tag_delta_2 = tag_delta_1 - (datum_ende - datum_heute) + 1
 tag_delta_3 = datum_ende - datum_heute
 
 col1, col2 = st.columns(2)
