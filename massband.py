@@ -2,7 +2,7 @@ import streamlit as st
 #from streamlit_elements import elements, mui, html
 
 #import pandas as pd
-from datetime import datetime
+from datetime import datetime, timedelta
 
 ###################################################
 
@@ -13,8 +13,13 @@ datum_heute = datetime.today()
 datum_ende = datetime(2023, 12, 15)
 
 tag_delta_1 = datum_ende - datum_start
-tag_delta_2 = tag_delta_1 - (datum_ende - datum_heute) + 1
+tag_delta_2 = tag_delta_1 - (datum_ende - datum_heute)
+tag_delta_2 += timedelta(days=1)
 tag_delta_3 = datum_ende - datum_heute
+tag_delta_3 += timedelta(days=1)
+
+
+#st.write(type(tag_delta_2))
 
 col1, col2 = st.columns(2)
 
@@ -39,4 +44,4 @@ with col23:
 st.progress(
     tag_delta_2.days/tag_delta_1.days,
     text="Schon rum..."
-    )
+   )
